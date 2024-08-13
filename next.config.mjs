@@ -1,4 +1,13 @@
+
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        domains: [
+            "files.edgestore.dev"
+        ]
+    }
+}
+
 
 export default nextConfig;

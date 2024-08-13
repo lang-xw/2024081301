@@ -82,9 +82,9 @@ export default function Home() {
     if (file) {
       try {
         const pdfBytes = await file.arrayBuffer();
-        // const pdfDoc = await PDFDocument.load(pdfBytes, {
-        //   ignoreEncryption: true,
-        // });
+        const pdfDoc = await PDFDocument.load(pdfBytes, {
+          ignoreEncryption: true,
+        });
         // 处理加密问题：Error: Input document to `PDFDocument.load` is encrypted.
         // 使用 `PDFDocument.load(..., { ignoreEncryption: true })` 忽略加密
 
