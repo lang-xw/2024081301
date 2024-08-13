@@ -82,19 +82,19 @@ export default function Home() {
     if (file) {
       try {
         const pdfBytes = await file.arrayBuffer();
-        const pdfDoc = await PDFDocument.load(pdfBytes, {
-          ignoreEncryption: true,
-        });
+        // const pdfDoc = await PDFDocument.load(pdfBytes, {
+        //   ignoreEncryption: true,
+        // });
         // 处理加密问题：Error: Input document to `PDFDocument.load` is encrypted.
         // 使用 `PDFDocument.load(..., { ignoreEncryption: true })` 忽略加密
 
         // 根据旋转角度数组旋转每一页
-        rotations.forEach((rotation, i) => {
-          const page = pdfDoc.getPage(i);
-          page.setRotation(
-            degrees((page.getRotation().angle + rotation) % 360)
-          );
-        });
+        // rotations.forEach((rotation, i) => {
+        //   const page = pdfDoc.getPage(i);
+        //   page.setRotation(
+        //     degrees((page.getRotation().angle + rotation) % 360)
+        //   );
+        // });
 
         // 保存旋转后的PDF并触发下载
         const rotatedPdfBytes = await pdfDoc.save();
